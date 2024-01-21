@@ -1,0 +1,7 @@
+#include <iostream>
+#include <vector>
+
+// declare functions
+void greet();
+void display_misses(int misses);
+void display_status(std::vector<char> incorrectGuess, std::string answer);
