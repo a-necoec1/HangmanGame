@@ -2,6 +2,8 @@
 #include <iostream>
 #include <vector>
 
+using namespace std;
+
 // define functions
 
 void greet() {
@@ -12,6 +14,7 @@ void greet() {
   std::cout << "==========\n";
 }
 
+// display total amount of misses including mr. hangman
 void display_misses(int misses) {
   if (misses == 0) {
     cout << "  +---+ \n";
@@ -72,6 +75,7 @@ void display_misses(int misses) {
   }
 }
 
+// display current status of the game
 void display_status(std::vector<char> incorrectGuess, std::string answer) {
   cout << "Incorrect Guesses: \n";
 
@@ -83,5 +87,17 @@ void display_status(std::vector<char> incorrectGuess, std::string answer) {
 
   for (int i = 0; i < answer.length(); i++) {
     cout << answer[i] << " ";
+  }
+}
+
+// trigger once the player gets either 7 misses or gets the word
+void end_game(string answer, string codeword) {
+  if (answer == codeword) {
+    cout << "\nCongratulations! You saved Mr. Hangman from being hanged!\n";
+    cout << "The word was: " << codeword << "\n";
+    cout << "Thanks for playing!\n";
+  } else {
+    cout << "\nOh no! Mr. Hangman has been hanged! :(\n";
+    cout << "Game over!";
   }
 }
